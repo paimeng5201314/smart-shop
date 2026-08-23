@@ -448,7 +448,9 @@ async def register_user(http_request: Request, request: RegisterRequest, respons
         if existing_admin:
             return error_response("用户已存在", 400)
 
-        display_name = request.nickname.strip() if request.nickname and request.nickname.strip() else username
+        display_name = request.nickname.strip()
+        if not display_name:
+            return error_response("昵称不能为空", 400)
         success = UserDB.create_user(username, password, display_name, id_status=2)
         if not success:
             return error_response("注册失败，请稍后重试", 500)

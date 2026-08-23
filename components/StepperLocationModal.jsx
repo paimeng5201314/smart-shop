@@ -204,7 +204,7 @@ export default function StepperLocationModal({
                           <i className="fas fa-location-dot text-lg text-white"></i>
                         </div>
                         <h3 className="text-lg font-semibold text-gray-900">选择配送地址</h3>
-                        <p className="text-gray-600 mt-1 text-sm">请选择您所在的园区和具体楼栋</p>
+                        <p className="text-gray-600 mt-1 text-sm">请选择您常玩的游戏和所属俱乐部</p>
                       </div>
 
                       {error && (
@@ -225,7 +225,7 @@ export default function StepperLocationModal({
                             <div className="bg-amber-50 border border-amber-200 text-amber-700 px-3 py-4 rounded-xl text-center">
                               <i className="fas fa-exclamation-triangle text-lg mb-2"></i>
                               <p className="font-medium mb-1 text-sm">暂无可选择的配送地址</p>
-                              <p className="text-xs text-amber-600">请联系管理员添加园区信息</p>
+                              <p className="text-xs text-amber-600">请联系管理员添加游戏信息</p>
                             </div>
                           ) : (
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -233,7 +233,7 @@ export default function StepperLocationModal({
                               <div className="space-y-3">
                                 <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
                                   <i className="fas fa-tree-city text-[#6B8F47] text-xs"></i>
-                                  园区选择
+                                  游戏选择
                                 </label>
                                 <div className={`grid gap-2 max-h-56 overflow-y-auto pr-1 ${addresses.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
                                   {addresses.map(addr => (
@@ -269,18 +269,18 @@ export default function StepperLocationModal({
                               <div className="space-y-3">
                                 <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
                                   <i className="fas fa-building text-blue-500 text-xs"></i>
-                                  楼栋选择
+                                  俱乐部选择
                                 </label>
                                 {!selectedAddressId ? (
                                   <div className="text-center py-12 text-gray-400 text-sm">
                                     <i className="fas fa-arrow-left mb-2 text-2xl"></i>
-                                    <p>请先选择园区</p>
+                                    <p>请先选择游戏</p>
                                   </div>
                                 ) : (!buildingOptions || buildingOptions.length === 0) ? (
                                   <div className="bg-amber-50 border border-amber-200 text-amber-700 px-3 py-4 rounded-xl text-center">
                                     <i className="fas fa-exclamation-triangle text-lg mb-2"></i>
-                                    <p className="font-medium mb-1 text-sm">该园区暂无楼栋</p>
-                                    <p className="text-xs text-amber-600">请联系管理员添加楼栋信息</p>
+                                    <p className="font-medium mb-1 text-sm">该游戏暂无俱乐部</p>
+                                    <p className="text-xs text-amber-600">请联系管理员添加俱乐部信息</p>
                                   </div>
                                 ) : (
                                   <div className={`grid gap-2 max-h-56 overflow-y-auto pr-1 ${buildingOptions.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
@@ -342,14 +342,14 @@ export default function StepperLocationModal({
                           <div className="space-y-2">
                             <div className="flex items-center gap-2 text-sm">
                               <i className="fas fa-map-marker-alt text-[#6B8F47] text-xs"></i>
-                              <span className="text-[#5A7A3A] font-medium">园区:</span>
+                              <span className="text-[#5A7A3A] font-medium">游戏:</span>
                               <span className="text-[#141413] font-semibold">
                                 {addresses?.find(a => a.id === selectedAddressId)?.name || '已选择'}
                               </span>
                             </div>
                             <div className="flex items-center gap-2 text-sm">
                               <i className="fas fa-building text-[#6B8F47] text-xs"></i>
-                              <span className="text-[#5A7A3A] font-medium">楼栋:</span>
+                              <span className="text-[#5A7A3A] font-medium">俱乐部:</span>
                               <span className="text-[#141413] font-semibold">
                                 {buildingOptions?.find(b => b.id === selectedBuildingId)?.name || '已选择'}
                               </span>

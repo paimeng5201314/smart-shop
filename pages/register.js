@@ -10,7 +10,7 @@ import LegalModal from "../components/LegalModal";
 import Toast from "../components/Toast";
 import { useToast } from "../hooks/useToast";
 
-const DEFAULT_USERNAME_PLACEHOLDER = "登录名";
+const DEFAULT_USERNAME_PLACEHOLDER = "请输入手机号";
 
 function PasswordStrength({ password }) {
   const { score, label, color } = useMemo(() => {
@@ -113,10 +113,20 @@ export default function Register() {
   }, [router]);
 
   const validateForm = useCallback(() => {
-    const { username, password, confirmPassword } = formData;
+    const { username, password, confirmPassword, nickname } = formData;
 
     if (!username.trim()) {
-      showToast("请输入账号");
+      showToast("请输入手机号");
+      return false;
+    }
+
+    if (!/^1[3-9]\d{9}$/.test(username.trim())) {
+      showToast("请输入正确的手机号");
+      return false;
+    }
+
+    if (!nickname.trim()) {
+      showToast("请输入昵称");
       return false;
     }
 
@@ -192,7 +202,7 @@ export default function Register() {
     const payload = {
       username: formData.username.trim(),
       password: formData.password,
-      nickname: formData.nickname.trim() || null,
+      nickname: formData.nickname.trim(),
     };
 
     setPendingRegisterPayload(payload);
@@ -370,7 +380,7 @@ export default function Register() {
                 <div className="space-y-4">
                   <div>
                     <label htmlFor="username" className="auth-label">
-                      账号 <span className="text-red-400">*</span>
+                      手机号 <span className="text-red-400">*</span>
                     </label>
                     <div
                       className={`auth-input-wrapper ${focusedField === "username" ? "auth-input-focused" : ""}`}
@@ -381,9 +391,11 @@ export default function Register() {
                       <input
                         id="username"
                         name="username"
-                        type="text"
+                        type="tel"
                         required
-                        autoComplete="username"
+                        autoComplete="tel"
+                        inputMode="numeric"
+                        maxLength={11}
                         autoCapitalize="none"
                         spellCheck={false}
                         value={formData.username}
@@ -398,7 +410,7 @@ export default function Register() {
 
                   <div>
                     <label htmlFor="nickname" className="auth-label">
-                      昵称
+                      昵称 <span className="text-red-400">*</span>
                     </label>
                     <div
                       className={`auth-input-wrapper ${focusedField === "nickname" ? "auth-input-focused" : ""}`}
@@ -410,6 +422,7 @@ export default function Register() {
                         id="nickname"
                         name="nickname"
                         type="text"
+                        required
                         autoComplete="nickname"
                         spellCheck={false}
                         value={formData.nickname}
@@ -417,7 +430,7 @@ export default function Register() {
                         onFocus={() => setFocusedField("nickname")}
                         onBlur={() => setFocusedField(null)}
                         className="auth-input"
-                        placeholder="选填"
+                        placeholder="请输入昵称"
                       />
                     </div>
                   </div>
