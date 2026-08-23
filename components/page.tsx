@@ -92,36 +92,36 @@ function FeaturesSection() {
   
   const features = [
     {
-      title: "智能助手",
-      subtitle: "Smart Assistant",
-      description: "AI-powered recommendation system",
-      icon: "fa-brain",
+      title: "战队集结",
+      subtitle: "Team Up",
+      description: "Find teammates and fight together",
+      icon: "fa-users",
       iconColorClass: "text-purple-400",
       glowColorClass: "bg-purple-400/20",
       detailedContent: {
-        intro: "通过自然语言对话，为每位用户提供个性化的商品推荐。我们的AI助手不仅能理解您的需求，更能帮助您进行实际操作。"
+        intro: "在哈基电竞结识志同道合的队友，参与日常训练与组队活动，一起磨合战术、挑战更高段位。"
       }
     },
     {
-      title: "安全支付",
-      subtitle: "Secure Payment",
-      description: "Advanced encryption technology",
-      icon: "fa-shield-halved",
+      title: "专业赛事",
+      subtitle: "Esports Events",
+      description: "Compete, improve and shine",
+      icon: "fa-trophy",
       iconColorClass: "text-emerald-400",
       glowColorClass: "bg-emerald-400/20",
       detailedContent: {
-        intro: "直接使用微信扫码支付，保障每一笔交易的安全与隐私。"
+        intro: "俱乐部定期组织训练赛、娱乐赛和主题赛事，为不同水平的玩家提供公平、热血的竞技舞台。"
       }
     },
     {
-      title: "极速配送",
-      subtitle: "Express Delivery",
-      description: "Lightning-fast shipping service",
-      icon: "fa-truck-fast",
+      title: "玩家社区",
+      subtitle: "Gaming Community",
+      description: "Share every glorious moment",
+      icon: "fa-headset",
       iconColorClass: "text-violet-400",
       glowColorClass: "bg-violet-400/20",
       detailedContent: {
-        intro: "从下单到收货，全程可追踪，享受闪电般的配送体验。"
+        intro: "分享攻略、复盘对局、交流电竞资讯，在友好的俱乐部氛围中记录每一次高光与成长。"
       }
     }
   ]
@@ -486,4 +486,3 @@ export default function Home() {
     </main>
   )
 }
-

@@ -1729,9 +1729,9 @@ export default function Shop({ initialShopData }) {
               className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight text-gray-900 animate-snack-fade-in-up"
               style={{ animationDelay: '0.05s' }}
             >
-              不止
+              为热爱
               <span className="text-[#FF6B6B] relative inline-block">
-                美味
+                集结
                 <svg className="absolute w-full h-2.5 bottom-1 left-0 text-[#FF6B6B] opacity-30 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" strokeLinecap="round" fill="none" />
                 </svg>
@@ -1741,9 +1741,9 @@ export default function Shop({ initialShopData }) {
               className="text-lg md:text-xl text-gray-500 mb-8 max-w-2xl mx-auto animate-snack-fade-in-up"
               style={{ animationDelay: '0.12s' }}
             >
-              精选优质零食，为您提供贴心配送服务
+              哈基电竞俱乐部严选电竞装备、战队周边与能量补给
               <br />
-              让美味触手可及
+              为每一场对局蓄力，让热爱并肩同行
             </p>
 
             <div className="mb-6 min-h-[52px] flex justify-center animate-snack-fade-in-up" style={{ animationDelay: '0.18s' }}>

@@ -17,7 +17,7 @@ class AdminLoginRequest(BaseModel):
 class RegisterRequest(BaseModel):
     username: str
     password: str
-    nickname: Optional[str] = None
+    nickname: str
     captcha_token: Optional[str] = None
 
 

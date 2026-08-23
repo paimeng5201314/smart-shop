@@ -313,7 +313,7 @@ export default function Checkout() {
     }
 
     if (!formData.room) {
-      errors.room = "请输入房间号";
+      errors.room = "请输入微信号";
     }
 
     setFieldErrors(errors);
@@ -1337,7 +1337,7 @@ export default function Checkout() {
 
                       <div style={{ display: "flex", gap: 10, marginTop: 12 }}>
                         <WarmInput
-                          label="配送区"
+                          label="游戏"
                           flex="1 1 calc(33% - 7px)"
                           readOnly
                         >
@@ -1357,7 +1357,7 @@ export default function Checkout() {
                           </div>
                         </WarmInput>
                         <WarmInput
-                          label="楼栋"
+                          label="俱乐部"
                           flex="1 1 calc(33% - 7px)"
                           readOnly
                         >
@@ -1377,12 +1377,12 @@ export default function Checkout() {
                           </div>
                         </WarmInput>
                         <WarmInput
-                          label="房间号"
+                          label="微信号"
                           id="room"
                           name="room"
                           value={formData.room}
                           onChange={handleInputChange}
-                          placeholder="如 502"
+                          placeholder="请输入微信号"
                           flex="1 1 calc(33% - 7px)"
                           required
                           error={fieldErrors.room}
